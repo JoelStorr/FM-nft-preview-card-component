@@ -50,6 +50,7 @@ body {
 }
 
 .card {
+
     width: 350px;
     height: 596px;
     background-color: var(--very-dark-blue-card);
@@ -63,11 +64,55 @@ body {
 
 }
 
+.image-container {
+
+    position: relative;
+    width: 302px;
+    height: 302px;
+    margin-bottom: 18px;
+}
+
+
 #equilibrium-img {
+    position: absolute;
     width: 302px;
     height: 302px;
     border-radius: 8px;
-    margin-bottom: 18px;
+
+}
+
+.image-container .hover-effect-img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 2;
+    transition: opacity .5s ease;
+    user-select: none;
+}
+
+.image-container:hover .hover-effect-img img {
+    opacity: 1;
+}
+
+
+.hover-effect-img .effect-bg {
+    user-select: none;
+    position: absolute;
+    width: 302px;
+    height: 302px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: var(--cyan);
+    border-radius: 8px;
+    opacity: .0;
+    transition: opacity .5s ease-in;
+}
+
+.image-container:hover .hover-effect-img .effect-bg {
+    opacity: .5;
 }
 
 
@@ -84,6 +129,10 @@ h1 {
     font-size: 22px;
     line-height: 28px;
     color: var(--white);
+}
+
+h1:hover {
+    color: var(--cyan);
 }
 
 .text-container p {
@@ -166,4 +215,8 @@ hr {
     font-size: 16px;
     line-height: 20px;
     color: var(--white);
+}
+
+.creator a:hover {
+    color: var(--cyan);
 }
